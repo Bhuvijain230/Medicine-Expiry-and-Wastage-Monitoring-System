@@ -16,7 +16,7 @@ with open('data/indian_medicine_data.csv', mode='r', encoding='utf-8') as file:
     
     for row in reader:
         query = """
-        INSERT INTO medicines 
+        INSERT IGNORE INTO medicines 
         (id, name, price, is_discontinued, manufacturer_name, type, pack_size_label, short_composition1, short_composition2)
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
@@ -33,8 +33,23 @@ with open('data/indian_medicine_data.csv', mode='r', encoding='utf-8') as file:
         )
         cursor.execute(query, values)
 
+
+print("Data inserted successfully!")
+
+#list of life saving drugs
+with open('data/life_saving_drugs.csv', mode='r', encoding='utf-8') as file:
+    reader = csv.DictReader(file)
+
+    for row in reader:
+        query = """
+        INSERT INTO life_saving_drugs (medicine_name, type_name)
+        VALUES (%s, %s)
+        """
+        values = (row['medicineName'], row['typeName'])
+        cursor.execute(query, values)
+
+print("Life-saving drugs inserted successfully!")
+
 # Commit and close connection
 conn.commit()
 conn.close()
-
-print("Data inserted successfully!")
