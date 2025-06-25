@@ -1,6 +1,15 @@
 from flask import Blueprint, request, jsonify
 from ..db import get_connection
 
+
+def is_priority_medicine(medicine_name):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM life_saving_drugs WHERE LOWER(name) = LOWER(%s)", (medicine_name,))
+    result = cursor.fetchone()
+    conn.close()
+    return result is not None
+
 search_bp = Blueprint('search', __name__)
 
 @search_bp.route('/search-medicine', methods=['GET'])
@@ -20,7 +29,11 @@ def search_medicine():
     """
     cursor.execute(query, (f"%{name}%", f"%{manufacturer}%"))
     results = cursor.fetchall()
-
     conn.close()
 
-    return jsonify(results)
+    updated_results = []
+    for row in results:
+        row["priority_medicine"] = is_priority_medicine(row["name"])
+        updated_results.append(row)
+
+    return jsonify(updated_results)

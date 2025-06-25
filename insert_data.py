@@ -50,6 +50,6 @@ with open('data/life_saving_drugs.csv', mode='r', encoding='utf-8') as file:
 
 print("Life-saving drugs inserted successfully!")
 
-# Commit and close connection
+
 conn.commit()
 conn.close()
