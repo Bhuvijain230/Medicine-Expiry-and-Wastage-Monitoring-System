@@ -5,6 +5,7 @@ from app.routes.search_routes import search_bp
 from app.routes.log_routes import log_bp
 from app.routes.wellness_routes import wellness_bp
 from app.routes.hospital_routes import hospital_bp
+from app.routes.auth_routes import auth_bp
 
 from apscheduler.schedulers.background import BackgroundScheduler
 from app.scheduler_jobs import check_expiring_user_medicines
@@ -17,6 +18,7 @@ app.register_blueprint(search_bp)
 app.register_blueprint(log_bp)
 app.register_blueprint(wellness_bp)
 app.register_blueprint(hospital_bp)
+app.register_blueprint(auth_bp)
 
 # Setting up APScheduler
 scheduler = BackgroundScheduler()

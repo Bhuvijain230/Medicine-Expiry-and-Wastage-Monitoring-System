@@ -21,6 +21,10 @@ def create_app():
     from app.routes.hospital_routes import hospital_bp
     app.register_blueprint(hospital_bp)
 
+    from app.routes.auth_routes import auth_bp
+    app.register_blueprint(auth_bp)
+
+
 
 
 
