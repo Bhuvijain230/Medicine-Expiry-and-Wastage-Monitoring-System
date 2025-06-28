@@ -1,0 +1,9 @@
+Flask
+Flask-Mail
+mysql-connector-python
+python-dotenv
+APScheduler
+pillow
+pyzxing
+numpy
+opencv-python
