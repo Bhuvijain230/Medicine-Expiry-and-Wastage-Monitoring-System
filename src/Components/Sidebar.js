@@ -1,22 +1,35 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   Home,
   PackageSearch,
   Bell,
   Gift,
   BarChart2,
-  Bot
-} from 'lucide-react';
+  Bot,
+  LogOut
+} from 'lucide-react'; // Include LogOut icon
 import './Sidebar.css';
+import logo from '../assets/logo.png'; // Adjust path if needed
 
 const Sidebar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isActive = (path) => location.pathname === path;
 
+  const handleLogout = () => {
+    localStorage.removeItem('isLoggedIn'); // Clear login state
+    navigate('/login'); // Redirect to login page
+  };
+
   return (
     <div className="sidebar">
+      {/* Logo */}
+      <div className="sidebar-logo">
+        <img src={logo} alt="Logo" className="logo-img" />
+      </div>
+
       {/* Sidebar Title */}
       <h2 className="sidebar-title">
         MEDICINE EXPIRY <br /> & WASTAGE <br /> MONITORING SYSTEM
@@ -62,8 +75,14 @@ const Sidebar = () => {
         </li>
       </ul>
 
-      {/* Footer or Role */}
-      <div className="admin">Admin</div>
+      {/* Logout Button */}
+      <div className="sidebar-footer">
+        <button className="logout-btn" onClick={handleLogout}>
+          <LogOut size={20} className="sidebar-icon" />
+          <span>Logout</span>
+        </button>
+        <div className="admin">Admin</div>
+      </div>
     </div>
   );
 };
