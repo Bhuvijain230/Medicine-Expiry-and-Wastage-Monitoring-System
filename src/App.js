@@ -1,6 +1,7 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import './App.css';
+import backgroundImage from './assets/background-image.png';
 
 // Components
 import Sidebar from './Components/Sidebar';
@@ -10,23 +11,38 @@ import Alerts from './Components/Alerts';
 import Donations from './Components/Donations';
 import Reports from './Components/Reports';
 import Chatbot from './Components/Chatbot';
+import Login from './Components/Login';
 
 function App() {
-  return (
-    <div className="app">
-      {/* Sidebar Navigation */}
-      <Sidebar />
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  const location = useLocation();
 
-      {/* Main Content Area */}
-      <div className="main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/inventory" element={<Inventory />} />
-          <Route path="/alerts" element={<Alerts />} />
-          <Route path="/donations" element={<Donations />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/chatbot" element={<Chatbot />} />
-        </Routes>
+  const showSidebar = isLoggedIn && location.pathname !== '/login';
+
+  return (
+    <div className="app-container">
+      {/* Blurred Background */}
+      <div
+        className="background-blur"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      />
+
+      {/* Foreground Content */}
+      <div className="app">
+        {showSidebar && <Sidebar />}
+
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
+            <Route path="/inventory" element={isLoggedIn ? <Inventory /> : <Navigate to="/login" />} />
+            <Route path="/alerts" element={isLoggedIn ? <Alerts /> : <Navigate to="/login" />} />
+            <Route path="/donations" element={isLoggedIn ? <Donations /> : <Navigate to="/login" />} />
+            <Route path="/reports" element={isLoggedIn ? <Reports /> : <Navigate to="/login" />} />
+            <Route path="/chatbot" element={isLoggedIn ? <Chatbot /> : <Navigate to="/login" />} />
+            <Route path="/login" element={isLoggedIn ? <Navigate to="/" /> : <Login />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </div>
       </div>
     </div>
   );
