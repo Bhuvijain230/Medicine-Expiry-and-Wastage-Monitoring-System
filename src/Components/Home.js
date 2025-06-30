@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const cards = [
   {
@@ -30,6 +30,15 @@ const cards = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    if (!isLoggedIn) {
+      navigate('/login');
+    }
+  }, [navigate]);
+
   return (
     <div className="home">
       <h1 className="home-title">Home</h1>
@@ -39,12 +48,13 @@ const Home = () => {
       </h2>
 
       <p className="home-description">
-        Track and manage your medicine inventory, receive alerts for expiring items, and find opportunities for donation.
+        Track and manage your medicine inventory, receive alerts for expiring items,
+        and find opportunities for donation.
       </p>
 
       <div className="card-grid">
-        {cards.map((card, i) => (
-          <Link to={card.path} key={i} className="card-link">
+        {cards.map((card, index) => (
+          <Link to={card.path} key={index} className="card-link">
             <div className="card">
               <div className="card-icon">{card.icon}</div>
               <h3 className="card-title">{card.title}</h3>
