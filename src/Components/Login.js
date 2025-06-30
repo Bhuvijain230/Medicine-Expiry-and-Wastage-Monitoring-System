@@ -1,46 +1,49 @@
-import React, { useState } from 'react';
-import './Login.css';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Login.css'; // Add cute styling here like the image
 
-const Login = () => {
+function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  useEffect(() => {
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      navigate('/');
+    }
+  }, [navigate]);
+
   const handleLogin = (e) => {
     e.preventDefault();
-    alert(`Email: ${email}\nPassword: ${password}`);
-    // Add routing logic or auth here
+    // Simulate login (you can use hardcoded email/password if needed)
+    localStorage.setItem('isLoggedIn', 'true');
+    navigate('/');
   };
 
   return (
-    <div className="login-page">
-      <h1 className="login-heading">Medicine Expiry</h1>
-      <div className="login-box">
+    <div className="login-container">
+      <form onSubmit={handleLogin} className="login-box">
         <h2>Login</h2>
-        <form onSubmit={handleLogin}>
-          <label>Email</label>
-          <input
-            type="email"
-            placeholder="Enter email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-
-          <label>Password</label>
-          <input
-            type="password"
-            placeholder="Enter password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-
-          <button type="submit">Log in</button>
-        </form>
-        <p className="forgot">Forgot password?</p>
-      </div>
+        <input
+          type="email"
+          placeholder="Email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit">Log in</button>
+        <p>Forgot your password?</p>
+        <p><a href="#">New user? Sign up</a></p>
+      </form>
     </div>
   );
-};
+}
 
 export default Login;
