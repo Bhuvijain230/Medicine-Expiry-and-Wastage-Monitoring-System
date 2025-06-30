@@ -1,6 +1,6 @@
 .sidebar {
   width: 250px;
-  background-color: #1f2d3d; /* Slightly lighter for clarity */
+  background-color: #6D2E46; /* wine color */
   color: white;
   padding: 20px;
   height: 100vh;
@@ -10,11 +10,25 @@
   justify-content: space-between;
 }
 
+.sidebar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo-img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
 .sidebar-title {
   font-size: 16px;
   font-weight: bold;
   line-height: 1.5;
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .sidebar-menu {
@@ -40,6 +54,7 @@
   width: 100%;
 }
 
+/* Active and Hover states */
 .sidebar-menu li.active,
 .sidebar-menu li:hover {
   background-color: white;
@@ -47,12 +62,42 @@
 
 .sidebar-menu li.active a,
 .sidebar-menu li:hover a {
-  color: #1f2d3d; /* dark text on white background */
+  color: #6D2E46; /* dark wine text */
+  font-weight: bold;
+}
+
+/* Footer Section */
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.logout-btn:hover {
+  background-color: white;
+  color: #6D2E46;
   font-weight: bold;
 }
 
 .admin {
-  margin-top: 100px;
+  margin-top: 10px;
   font-weight: bold;
-  color: #ccc;
+  color: #f0d4e2; /* soft contrast on wine background */
+  text-align: center;
+  width: 100%;
 }
