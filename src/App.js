@@ -12,12 +12,14 @@ import Donations from './Components/Donations';
 import Reports from './Components/Reports';
 import Chatbot from './Components/Chatbot';
 import Login from './Components/Login';
+import Register from './Components/Register'; // ✅ New import
 
 function App() {
   const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
   const location = useLocation();
 
-  const showSidebar = isLoggedIn && location.pathname !== '/login';
+  // ✅ Hide Sidebar on login and register pages
+  const showSidebar = isLoggedIn && location.pathname !== '/login' && location.pathname !== '/register';
 
   return (
     <div className="app-container">
@@ -40,6 +42,7 @@ function App() {
             <Route path="/reports" element={isLoggedIn ? <Reports /> : <Navigate to="/login" />} />
             <Route path="/chatbot" element={isLoggedIn ? <Chatbot /> : <Navigate to="/login" />} />
             <Route path="/login" element={isLoggedIn ? <Navigate to="/" /> : <Login />} />
+            <Route path="/register" element={isLoggedIn ? <Navigate to="/" /> : <Register />} /> {/* ✅ New route */}
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </div>
