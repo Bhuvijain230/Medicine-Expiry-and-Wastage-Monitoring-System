@@ -47,11 +47,12 @@
   background-color: #fffdfb;
   font-size: 14px;
   outline: none;
-  transition: border 0.3s;
+  transition: border 0.3s, box-shadow 0.3s;
 }
 
 .login-box input:focus {
   border-color: #f4a261;
+  box-shadow: 0 0 0 2px rgba(244, 162, 97, 0.2);
 }
 
 /* Button */
@@ -73,19 +74,22 @@
   background-color: #e76f51;
 }
 
-/* Link and helper text */
+/* Paragraph text (e.g. forgot password) */
 .login-box p {
   margin-top: 10px;
   font-size: 13px;
   color: #7a4f35;
 }
 
-.login-box a {
+/* Styled "Sign up" link */
+.register-link {
   color: #c44c31;
-  text-decoration: none;
   font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
-.login-box a:hover {
+.register-link:hover {
+  color: #e65100;
   text-decoration: underline;
 }
