@@ -1,5 +1,3 @@
-/* Home.css */
-
 .home {
   padding: 40px;
   flex-grow: 1;
@@ -36,7 +34,7 @@
 }
 
 .card {
-  background-color: #fff;
+  background-color: #ECE2D0; /* 👈 Light bone color added */
   padding: 20px;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
