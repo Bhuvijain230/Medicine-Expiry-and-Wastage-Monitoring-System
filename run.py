@@ -14,6 +14,7 @@ from app.scheduler_jobs import check_expiring_user_medicines
 import atexit
 
 app = Flask(__name__)
+CORS(app)
 app.register_blueprint(bp)
 app.register_blueprint(crud_bp)
 app.register_blueprint(search_bp)
@@ -21,8 +22,10 @@ app.register_blueprint(log_bp)
 app.register_blueprint(wellness_bp)
 app.register_blueprint(hospital_bp)
 app.register_blueprint(auth_bp)
+
+
 app.register_blueprint(donation_bp)
-CORS(app)
+
 
 # Setting up APScheduler
 scheduler = BackgroundScheduler()

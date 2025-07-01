@@ -25,7 +25,15 @@ def register():
             VALUES (%s, %s, %s, %s)
         """, (username, email, phone, password_hash))
         conn.commit()
-        return jsonify({"message": "User registered successfully"}), 201
+        return jsonify({
+    "message": "User registered successfully",
+    "user": {
+        "username": username,
+        "email": email,
+        "phone": phone
+    }
+}), 201
+
     except Exception as e:
         conn.rollback()
         return jsonify({"error": str(e)}), 500
