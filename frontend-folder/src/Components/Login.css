@@ -1,0 +1,95 @@
+/* Container to center the login box */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fdf2e9; /* soft beige background */
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Optional decorative image: heart + bottle */
+.login-decor {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+/* Login box */
+.login-box {
+  background-color: #fff8f2;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Login heading */
+.login-box h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #7a4f35;
+  font-weight: bold;
+}
+
+/* Input fields */
+.login-box input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #e1c8b0;
+  border-radius: 12px;
+  background-color: #fffdfb;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.login-box input:focus {
+  border-color: #f4a261;
+  box-shadow: 0 0 0 2px rgba(244, 162, 97, 0.2);
+}
+
+/* Button */
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #f4a261;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-box button:hover {
+  background-color: #e76f51;
+}
+
+/* Paragraph text (e.g. forgot password) */
+.login-box p {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #7a4f35;
+}
+
+/* Styled "Sign up" link */
+.register-link {
+  color: #c44c31;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.register-link:hover {
+  color: #e65100;
+  text-decoration: underline;
+}

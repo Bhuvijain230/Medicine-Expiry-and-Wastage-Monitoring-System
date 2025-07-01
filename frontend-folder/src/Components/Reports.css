@@ -1,0 +1,125 @@
+.reports-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.reports-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.reports-header h1 {
+  font-size: 28px;
+  color: #0f2a52;
+  margin: 0;
+}
+
+.generate-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.generate-btn {
+  padding: 10px 18px;
+  background-color: #e0e7ff;
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.generate-btn:hover {
+  background-color: #c7d2fe;
+}
+
+.report-list {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.report-card {
+  display: flex;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: white;
+  gap: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.report-card:hover {
+  transform: scale(1.01);
+}
+
+.report-icon {
+  font-size: 32px;
+  background-color: #eef3fb;
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 50px;
+  text-align: center;
+}
+
+.report-details {
+  flex: 1;
+}
+
+.report-details h3 {
+  margin: 0;
+  color: #0f2a52;
+  font-size: 18px;
+}
+
+.placeholder-line {
+  height: 8px;
+  background: #e3e3e3;
+  margin: 8px 0;
+  border-radius: 4px;
+  width: 80%;
+}
+
+.placeholder-line.short {
+  width: 60%;
+}
+
+.report-action {
+  font-size: 15px;
+  padding: 8px 14px;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.report-action:hover {
+  background-color: #2563eb;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .report-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .generate-buttons {
+    flex-direction: column;
+  }
+
+  .report-action {
+    align-self: flex-end;
+  }
+}
