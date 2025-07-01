@@ -2,29 +2,32 @@ import React, { useEffect } from 'react';
 import './Home.css';
 import { Link, useNavigate } from 'react-router-dom';
 
+// ✅ Import professional icons from react-icons
+import { MdInventory, MdNotificationsActive, MdVolunteerActivism, MdAssessment } from 'react-icons/md';
+
 const cards = [
   {
     title: 'Manage Inventory',
     desc: 'View and add medicines to your inventory',
-    icon: '📋',
+    icon: <MdInventory size={36} color="#7a4f35" />,
     path: '/inventory',
   },
   {
     title: 'View Alerts',
     desc: 'Check notifications for medicines nearing expiry',
-    icon: '📅',
+    icon: <MdNotificationsActive size={36} color="#7a4f35" />,
     path: '/alerts',
   },
   {
     title: 'Find Donations',
     desc: 'Explore options for donating unused medicines',
-    icon: '🤝',
+    icon: <MdVolunteerActivism size={36} color="#7a4f35" />,
     path: '/donations',
   },
   {
     title: 'Generate Reports',
     desc: 'Analyze data on medicine usage and wastage',
-    icon: '📊',
+    icon: <MdAssessment size={36} color="#7a4f35" />,
     path: '/reports',
   },
 ];
