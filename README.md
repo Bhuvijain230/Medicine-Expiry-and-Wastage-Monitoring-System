@@ -70,12 +70,6 @@ Medicine-Expiry-and-Wastage-Monitoring-System/
 ```
 
 
-## Branches
-
-- **main:** Core inventory management and base features.
-- **notification:** Adds and tests the automated notification system for expiry alerts.
-
-
 ## Setup \& Installation
 
 1. **Clone the repository:**
