@@ -1,0 +1,104 @@
+.alerts-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.alerts-header {
+  font-size: 24px;
+  background-color: #0f2a52;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.alerts-controls {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.alerts-controls input {
+  padding: 8px 12px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 14px;
+}
+
+.alerts-controls button {
+  padding: 8px 12px;
+  background-color: #0f2a52;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.alerts-controls button:hover {
+  background-color: #163a75;
+}
+
+.alerts-subheading {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+.alerts-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+}
+
+.alerts-table th,
+.alerts-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.alerts-table th {
+  background-color: #e5e5e5;
+  color: #333;
+}
+
+.expiry-dot {
+  display: inline-block;
+  margin-left: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-red {
+  background-color: red;
+}
+
+.dot-orange {
+  background-color: orange;
+}
+
+.days-left.red {
+  color: red;
+  font-weight: bold;
+}
+
+.days-left.orange {
+  color: orange;
+  font-weight: bold;
+}
+
+.no-alerts {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  margin-top: 20px;
+}

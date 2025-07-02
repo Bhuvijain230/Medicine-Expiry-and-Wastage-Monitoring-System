@@ -24,6 +24,9 @@ def create_app():
     from app.routes.auth_routes import auth_bp
     app.register_blueprint(auth_bp)
 
+    from app.routes.donation_routes import donation_bp
+    app.register_blueprint(donation_bp)
+
 
 
 

@@ -1,0 +1,104 @@
+/* Donations.css */
+.donations-container {
+  padding: 30px;
+}
+
+.search-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-controls input,
+.search-controls select,
+.search-controls button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-controls button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.centre-list {
+  margin: 20px 0;
+}
+
+.centre-radio {
+  display: block;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.centre-card {
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+}
+
+.centre-radio input[type='radio'] {
+  margin-right: 10px;
+}
+
+.centre-card.selected {
+  border-color: #3b82f6;
+  background-color: #e0f2fe;
+}
+
+.policy {
+  font-style: italic;
+  color: #666;
+}
+
+.medicine-form-wrapper {
+  margin-top: 30px;
+}
+
+.medicine-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.medicine-form input,
+.medicine-form button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.donation-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.donation-list li {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.donation-list button {
+  margin-left: 10px;
+  background-color: #ef4444;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.donation-preview {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  background-color: #fdf6e3;
+}
