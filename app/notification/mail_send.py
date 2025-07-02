@@ -1,4 +1,6 @@
-from flask_mail import Mail, Message
+# mail_send.py
+
+from flask_mail import Mail, Message 
 from flask import Flask
 from config import *
 
@@ -8,15 +10,15 @@ def init_mail(app):
     app.config.from_object('config')
     mail.init_app(app)
 
-def send_email(recipient):
+def send_email(recipient, subject, body):
     msg = Message(
-        subject="Expiry Date Reached",
+        subject=subject,
         sender=MAIL_USERNAME,
         recipients=[recipient],
-        body="Expiry date reached"
+        body=body
     )
     try:
         mail.send(msg)
         print(f"Email sent to {recipient}")
     except Exception as e:
-        print(f" Failed to send email to {recipient}: {e}")
+        print(f"Failed to send email to {recipient}: {e}")

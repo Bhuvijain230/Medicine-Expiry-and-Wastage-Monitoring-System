@@ -1,12 +1,14 @@
+# sms_send.py
+
 from twilio.rest import Client
 from config import *
 
 client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
-def send_sms(phone_no):
+def send_sms(phone_no, body): 
     try:
         message = client.messages.create(
-            body="Expiry date reached",
+            body=body,
             from_=TWILIO_PHONE_NUMBER,
             to=phone_no
         )

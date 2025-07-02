@@ -5,6 +5,7 @@ from app.db import get_connection
 from app.notification.mail_send import init_mail, send_email
 from app.notification.sms_send import send_sms
 
+
 class Config:
     SCHEDULER_API_ENABLED = True
 
@@ -30,14 +31,17 @@ def get_expiring_users():
     conn.close()
     return users
 
-@scheduler.task('interval', id='check_expiry_task', seconds=60)
+@scheduler.task('interval', id='check_expiry_task', seconds = 120)
 
 def check_and_notify():
     print("Scheduled task running at", datetime.now())
     users = get_expiring_users()
     for user in users:
-        send_email(user['email'])
-        send_sms(user['phone_number'])
+        with app.app_context():
+            send_email(user['email'])
+            send_sms(user['phone_number'])
+        
+        
     print(f"{len(users)} user(s) notified.")
 
 @app.route('/')
