@@ -3,16 +3,18 @@ import './Alerts.css';
 import axios from 'axios';
 
 const API_BASE_URL = 'http://localhost:5000';
-const userId = 1; // Replace with dynamic ID after login
 
 const Alerts = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [alerts, setAlerts] = useState([]);
 
   useEffect(() => {
+    const uid = localStorage.getItem('user_id');
+    if (!uid) return;
+
     const fetchExpiringMedicines = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/user-expiring-medicines/${userId}`);
+        const res = await axios.get(`${API_BASE_URL}/user-expiring-medicines/${uid}`);
         setAlerts(res.data);
       } catch (err) {
         console.error('Error fetching expiring medicines:', err);
@@ -29,7 +31,6 @@ const Alerts = () => {
   return (
     <div className="alerts-container">
       <h1 className="alerts-header">Alerts</h1>
-
       <div className="alerts-controls">
         <input
           type="text"

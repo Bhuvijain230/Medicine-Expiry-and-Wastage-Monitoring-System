@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Inventory.css';
 
-const API_BASE_URL = 'http://localhost:5000'; 
-const userId = 1; 
+const API_BASE_URL = 'http://localhost:5000';
 
 const Inventory = () => {
+  const [userId, setUserId] = useState(null);
   const [inventory, setInventory] = useState([]);
   const [formData, setFormData] = useState({
     medicine_name: '',
@@ -17,12 +17,16 @@ const Inventory = () => {
   const [editId, setEditId] = useState(null);
 
   useEffect(() => {
-    fetchInventory();
+    const storedUserId = localStorage.getItem('user_id');
+    if (storedUserId) {
+      setUserId(storedUserId);
+      fetchInventory(storedUserId);
+    }
   }, []);
 
-  const fetchInventory = async () => {
+  const fetchInventory = async (id) => {
     try {
-      const res = await axios.get(`${API_BASE_URL}/user-logged-medicines/${userId}`);
+      const res = await axios.get(`${API_BASE_URL}/user-logged-medicines/${id}`);
       setInventory(res.data);
     } catch (err) {
       console.error('Error loading inventory:', err);
@@ -35,7 +39,6 @@ const Inventory = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const payload = {
       ...formData,
       user_id: userId
@@ -43,16 +46,14 @@ const Inventory = () => {
 
     try {
       if (editId !== null) {
-        // Update
         await axios.put(`${API_BASE_URL}/update-user-medicine/${editId}`, payload);
       } else {
-        // Add
         await axios.post(`${API_BASE_URL}/log-medicine`, payload);
       }
 
       setFormData({ medicine_name: '', manufacturer_name: '', mfg_date: '', expiry_date: '', notes: '' });
       setEditId(null);
-      fetchInventory();
+      fetchInventory(userId);
     } catch (err) {
       console.error('Error submitting form:', err);
     }
@@ -61,7 +62,7 @@ const Inventory = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(`${API_BASE_URL}/delete-user-medicine/${id}`);
-      fetchInventory();
+      fetchInventory(userId);
     } catch (err) {
       console.error('Error deleting medicine:', err);
     }

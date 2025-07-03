@@ -15,21 +15,23 @@ function Login() {
   }, [navigate]);
 
   const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post('http://localhost:5000/login', {
-        email,
-        password
-      });
-      alert('✅ ' + res.data.message);
-      localStorage.setItem('isLoggedIn', 'true');
-      localStorage.setItem('user', JSON.stringify(res.data.user));
-      navigate('/');
-    } catch (err) {
-      console.error(err);
-      alert('❌ Login failed');
-    }
-  };
+  e.preventDefault();
+  try {
+    const res = await axios.post('http://localhost:5000/login', {
+      email,
+      password
+    });
+    alert('✅ ' + res.data.message);
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('user', JSON.stringify(res.data.user));
+    localStorage.setItem('user_id', res.data.user.id);  
+    navigate('/');
+  } catch (err) {
+    console.error(err);
+    alert('❌ Login failed');
+  }
+};
+
 
   return (
     <div className="login-container">
