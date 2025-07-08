@@ -102,3 +102,12 @@
   border-radius: 10px;
   background-color: #fdf6e3;
 }
+.btn{
+  background-color: #6D2E46; /* wine color */
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 9px;
+  
+}
