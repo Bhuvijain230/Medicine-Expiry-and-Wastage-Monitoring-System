@@ -2,7 +2,10 @@
   padding: 40px;
   flex-grow: 1;
 }
-
+.home h1:hover{
+  font-weight: 400;
+  font-variant:initial;
+}
 .home-title {
   font-size: 32px;
   font-weight: bold;

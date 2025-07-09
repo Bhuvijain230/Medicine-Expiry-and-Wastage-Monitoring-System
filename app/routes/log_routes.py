@@ -7,7 +7,7 @@ log_bp = Blueprint('log_routes', __name__)
 def log_medicine():
     data = request.get_json()
 
-    required_fields = ['medicine_name', 'manufacturer_name', 'mfg_date', 'expiry_date','user_id']
+    required_fields = ['medicine_name', 'manufacturer_name', 'mfg_date', 'expiry_date','quantity','user_id']
     if not all(field in data for field in required_fields):
         return jsonify({'error': 'Missing required fields'}), 400
 
@@ -16,7 +16,7 @@ def log_medicine():
         cursor = conn.cursor()
         query = """
         INSERT INTO user_medicine_logs (medicine_name, manufacturer_name, mfg_date, expiry_date, quantity,notes,user_id)
-        VALUES (%s, %s, %s, %s, %s, %s)
+        VALUES (%s, %s, %s, %s, %s, %s,%s)
         """
         values = (
             data['medicine_name'],
