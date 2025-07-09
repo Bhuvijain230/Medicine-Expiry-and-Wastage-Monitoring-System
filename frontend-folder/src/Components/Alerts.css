@@ -1,30 +1,21 @@
 .alerts-container {
   padding: 20px;
   max-width: 1000px;
-  margin: auto;
-  font-family: Arial, sans-serif;
+  flex-wrap: wrap;
 }
-
-.alerts-header {
-  font-size: 24px;
-  background-color: #0f2a52;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  width: fit-content;
-  margin-bottom: 20px;
+.alerts-container h1:hover{
+  font-weight: 400;
+  font-variant:initial;
 }
-
 .alerts-controls {
   margin: 20px 0;
   display: flex;
-  gap: 10px;
+  gap: 50rem;
   align-items: center;
 }
 
 .alerts-controls input {
   padding: 8px 12px;
-  width: 250px;
   border-radius: 5px;
   border: 1px solid gray;
   font-size: 14px;
@@ -32,7 +23,7 @@
 
 .alerts-controls button {
   padding: 8px 12px;
-  background-color: #0f2a52;
+  background-color: #6D2E46;
   color: white;
   border: none;
   border-radius: 5px;
@@ -41,7 +32,8 @@
 }
 
 .alerts-controls button:hover {
-  background-color: #163a75;
+  background-color: #6D2E46;
+
 }
 
 .alerts-subheading {
@@ -55,21 +47,22 @@
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
-  background-color: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .alerts-table th,
 .alerts-table td {
   padding: 12px;
-  border-bottom: 1px solid #ccc;
-  text-align: left;
+  border: 1px solid #6d2e46;
+  text-align: center;
 }
 
 .alerts-table th {
-  background-color: #e5e5e5;
-  color: #333;
+  background-color: #f3d0c3;
 }
-
+.alerts-table td {
+  background-color: #f3f0;
+}
 .expiry-dot {
   display: inline-block;
   margin-left: 10px;
@@ -87,7 +80,7 @@
 }
 
 .days-left.red {
-  color: red;
+  color: black;
   font-weight: bold;
 }
 
@@ -101,4 +94,20 @@
   color: green;
   font-weight: bold;
   margin-top: 20px;
+}
+
+.alerts-controls-Btn{
+  background-color: #6D2E46;
+  color: white;
+  border-color: black;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+  margin-left: auto;
+}
+
+
+.Btn:hover{
+   transition-property: all;
+   font-size: medium;
 }

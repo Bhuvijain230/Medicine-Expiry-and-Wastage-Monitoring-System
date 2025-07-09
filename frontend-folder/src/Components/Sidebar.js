@@ -10,7 +10,7 @@ import {
   LogOut
 } from 'lucide-react'; // Include LogOut icon
 import './Sidebar.css';
-import logo from '../assets/logo.png'; // Adjust path if needed
+import Clockend from '../assets/Clockend.png'; // Adjust path if needed
 
 const Sidebar = () => {
   const location = useLocation();
@@ -27,7 +27,7 @@ const Sidebar = () => {
     <div className="sidebar">
       {/* Logo */}
       <div className="sidebar-logo">
-        <img src={logo} alt="Logo" className="logo-img" />
+        <img src={Clockend} alt="Logo" className="logo-img" />
       </div>
 
       {/* Sidebar Title */}

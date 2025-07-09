@@ -7,7 +7,7 @@ log_bp = Blueprint('log_routes', __name__)
 def log_medicine():
     data = request.get_json()
 
-    required_fields = ['medicine_name', 'manufacturer_name', 'mfg_date', 'expiry_date','user_id']
+    required_fields = ['medicine_name', 'manufacturer_name', 'mfg_date', 'expiry_date','quantity','user_id']
     if not all(field in data for field in required_fields):
         return jsonify({'error': 'Missing required fields'}), 400
 
@@ -15,14 +15,15 @@ def log_medicine():
         conn = get_connection()
         cursor = conn.cursor()
         query = """
-        INSERT INTO user_medicine_logs (medicine_name, manufacturer_name, mfg_date, expiry_date, notes,user_id)
-        VALUES (%s, %s, %s, %s, %s, %s)
+        INSERT INTO user_medicine_logs (medicine_name, manufacturer_name, mfg_date, expiry_date, quantity,notes,user_id)
+        VALUES (%s, %s, %s, %s, %s, %s,%s)
         """
         values = (
             data['medicine_name'],
             data['manufacturer_name'],
             data['mfg_date'],  # format: YYYY-MM-DD
             data['expiry_date'],
+            data['quantity'],
             data.get('notes', '') ,
             data['user_id'] 
         )
@@ -65,6 +66,7 @@ def update_user_medicine(log_id):
             manufacturer_name = %s,
             mfg_date = %s,
             expiry_date = %s,
+            quantity =%s,
             notes = %s
         WHERE id = %s
     """
@@ -73,6 +75,7 @@ def update_user_medicine(log_id):
         data['manufacturer_name'],
         data['mfg_date'],
         data['expiry_date'],
+        data['quantity'],
         data.get('notes', ''),
         log_id
     )

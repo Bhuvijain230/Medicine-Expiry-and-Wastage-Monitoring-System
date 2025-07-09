@@ -2,7 +2,10 @@
 .donations-container {
   padding: 30px;
 }
-
+.donations-container h1:hover{
+  font-weight: 400;
+  font-variant:initial;
+}
 .search-controls {
   display: flex;
   gap: 10px;
@@ -19,10 +22,40 @@
 }
 
 .search-controls button {
-  background-color: #3b82f6;
+  background-color: #6D2E46; /* wine color */
   color: white;
   border: none;
   cursor: pointer;
+  padding: 10px;
+}
+.search-controls button:hover{
+  background-color: #f3d0c3;
+  color:#6D2E46;
+}
+
+.Add-btn{
+  background-color: #6D2E46; /* wine color */
+  color: white;
+  border-color: black;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.Add-btn:hover{
+   transition-property: all;
+   font-size: medium;
+   
+}
+
+.Del-btn{
+  background-color: #f5c8c4;
+  color: black;
+  padding:5px;
+  cursor: pointer;
+}
+.Del-btn:hover{
+  color:white;
+  background-color: #6d2e46;
 }
 
 .centre-list {
@@ -87,12 +120,13 @@
 
 .donation-list button {
   margin-left: 10px;
-  background-color: #ef4444;
-  color: white;
   padding: 6px 12px;
-  border: none;
   border-radius: 6px;
   cursor: pointer;
+  background-color: #f5c8c4;
+  color:black;
+  transform:scale(1.1);
+
 }
 
 .donation-preview {
@@ -101,4 +135,27 @@
   border: 2px dashed #ccc;
   border-radius: 10px;
   background-color: #fdf6e3;
+}
+
+.submit-btn{
+ margin-left: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: #f5c8c4;
+  color:black;
+  cursor: pointer;
+  transform:scale(1.1);
+}
+
+.Add-btn{
+  background-color: #6D2E46; /* wine color */
+  color: white;
+  border-color: black;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.Add-btn:hover{
+   transition-property: all;
+   font-size: medium;
 }
