@@ -9,5 +9,5 @@ cd ..
 # Step 2: Install backend Python dependencies
 pip install -r requirements.txt
 
-# Step 3: Start Flask backend using gunicorn
-python run.py
+# Step 3: Start Flask backend
+gunicorn run:app --bind=0.0.0.0:$PORT
