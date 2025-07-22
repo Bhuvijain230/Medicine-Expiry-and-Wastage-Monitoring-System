@@ -1,0 +1,113 @@
+.alerts-container {
+  padding: 20px;
+  max-width: 1000px;
+  flex-wrap: wrap;
+}
+.alerts-container h1:hover{
+  font-weight: 400;
+  font-variant:initial;
+}
+.alerts-controls {
+  margin: 20px 0;
+  display: flex;
+  gap: 50rem;
+  align-items: center;
+}
+
+.alerts-controls input {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 14px;
+}
+
+.alerts-controls button {
+  padding: 8px 12px;
+  background-color: #6D2E46;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.alerts-controls button:hover {
+  background-color: #6D2E46;
+
+}
+
+.alerts-subheading {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+.alerts-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.alerts-table th,
+.alerts-table td {
+  padding: 12px;
+  border: 1px solid #6d2e46;
+  text-align: center;
+}
+
+.alerts-table th {
+  background-color: #f3d0c3;
+}
+.alerts-table td {
+  background-color: #f3f0;
+}
+.expiry-dot {
+  display: inline-block;
+  margin-left: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-red {
+  background-color: red;
+}
+
+.dot-orange {
+  background-color: orange;
+}
+
+.days-left.red {
+  color: black;
+  font-weight: bold;
+}
+
+.days-left.orange {
+  color: orange;
+  font-weight: bold;
+}
+
+.no-alerts {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.alerts-controls-Btn{
+  background-color: #6D2E46;
+  color: white;
+  border-color: black;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+  margin-left: auto;
+}
+
+
+.Btn:hover{
+   transition-property: all;
+   font-size: medium;
+}

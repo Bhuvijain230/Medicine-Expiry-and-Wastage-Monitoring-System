@@ -1,0 +1,100 @@
+/* Full-page background with more visible image and light overlay */
+.login-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: 
+    linear-gradient(rgba(253, 242, 233, 0.3), rgba(253, 242, 233, 0.3)), 
+    url('../assets/background-image1.png') no-repeat center center;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+/* Optional floating heading */
+.login-heading {
+  font-size: 32px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 40px; /* shifts the text slightly downward */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Wine colored login box */
+.login-box {
+  background-color: #6D2E46;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Login heading inside box */
+.login-box h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Input fields */
+.login-box input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 12px;
+  background-color: #edf2ff;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Button */
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffffff;
+  color: #6D2E46;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-box button:hover {
+  background-color: #f3dbe3;
+}
+
+/* Info paragraph */
+.login-box p {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #fff;
+}
+
+/* Register link */
+.register-link {
+  color: #ffd6e0;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.register-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}

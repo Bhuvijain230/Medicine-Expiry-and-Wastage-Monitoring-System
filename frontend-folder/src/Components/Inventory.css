@@ -1,0 +1,128 @@
+.inventory-container {
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.inventory-container h1:hover{
+  font-weight: 400;
+  font-variant:initial;
+}
+.inventory-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.inventory-controls{
+  margin: 20px 0;
+  display: flex;
+  gap: 50rem;
+  align-items: center;
+  padding: 15px;
+}
+
+.inventory-form input,
+.inventory-form button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+
+.inventory-form button {
+  background-color: #6d2e46; /* wine color */
+  color: white;
+  border-color: black;
+  cursor: pointer;
+}
+
+.Donate-btn{
+ margin-left: 10px;
+  padding: 5px 5px ;
+  border-radius: 6px;
+  background-color: #f5c8c4;
+  color:black;
+  cursor: pointer;
+  transform:scale(1.1);
+
+}
+.Donate-btn:hover{
+  color:white;
+  background-color: #6d2e46;
+}
+
+
+.Add-btn{
+  background-color: #6D2E46; /* wine color */
+  color: white;
+  border-color: black;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.Add-btn:hover{
+   transition-property: all;
+   font-size: medium;
+}
+
+.Edit-btn{
+  margin-left: 10px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background-color: #f5c8c4;
+  color:black;
+  cursor: pointer;
+  transform:scale(1.1);
+
+}
+.Edit-btn:hover{
+  color:white;
+  background-color: #6d2e46;
+}
+
+.Del-btn{
+  margin-left: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: #f5c8c4;
+  color:black;
+  cursor: pointer;
+  transform:scale(1.1);
+}
+.Del-btn:hover{
+  color:white;
+  background-color: #6d2e46;
+}
+
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.inventory-table th,
+.inventory-table td {
+  border: 1px solid #6d2e46;
+  padding: 10px;
+  text-align: center;
+}
+
+.inventory-table th {
+  background-color: #f3d0c3;
+}
+.inventory-table td {
+  background-color: #f3f0;
+}
+.Btn{
+  background-color: #6D2E46; /* wine color */
+  color: white;
+  border-color: black;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.Btn:hover{
+   transition-property: all;
+   font-size: medium;
+}

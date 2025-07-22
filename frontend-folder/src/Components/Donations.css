@@ -1,0 +1,161 @@
+/* Donations.css */
+.donations-container {
+  padding: 30px;
+}
+.donations-container h1:hover{
+  font-weight: 400;
+  font-variant:initial;
+}
+.search-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-controls input,
+.search-controls select,
+.search-controls button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-controls button {
+  background-color: #6D2E46; /* wine color */
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+.search-controls button:hover{
+  background-color: #f3d0c3;
+  color:#6D2E46;
+}
+
+.Add-btn{
+  background-color: #6D2E46; /* wine color */
+  color: white;
+  border-color: black;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.Add-btn:hover{
+   transition-property: all;
+   font-size: medium;
+   
+}
+
+.Del-btn{
+  background-color: #f5c8c4;
+  color: black;
+  padding:5px;
+  cursor: pointer;
+}
+.Del-btn:hover{
+  color:white;
+  background-color: #6d2e46;
+}
+
+.centre-list {
+  margin: 20px 0;
+}
+
+.centre-radio {
+  display: block;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.centre-card {
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+}
+
+.centre-radio input[type='radio'] {
+  margin-right: 10px;
+}
+
+.centre-card.selected {
+  border-color: #3b82f6;
+  background-color: #e0f2fe;
+}
+
+.policy {
+  font-style: italic;
+  color: #666;
+}
+
+.medicine-form-wrapper {
+  margin-top: 30px;
+}
+
+.medicine-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.medicine-form input,
+.medicine-form button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.donation-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.donation-list li {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.donation-list button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #f5c8c4;
+  color:black;
+  transform:scale(1.1);
+
+}
+
+.donation-preview {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  background-color: #fdf6e3;
+}
+
+.submit-btn{
+ margin-left: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: #f5c8c4;
+  color:black;
+  cursor: pointer;
+  transform:scale(1.1);
+}
+
+.Add-btn{
+  background-color: #6D2E46; /* wine color */
+  color: white;
+  border-color: black;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.Add-btn:hover{
+   transition-property: all;
+   font-size: medium;
+}
