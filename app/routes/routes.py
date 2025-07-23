@@ -3,7 +3,7 @@ from ..db import get_connection
 
 bp = Blueprint('routes', __name__)
 
-@bp.route('/-')
+@bp.route('/api')
 def home():
     return "Backend is live "
 
