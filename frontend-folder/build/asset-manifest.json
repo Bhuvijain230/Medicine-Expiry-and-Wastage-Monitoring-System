@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e17713ec.css",
+    "main.js": "/static/js/main.9f26d298.js",
+    "static/media/background-image.png": "/static/media/background-image.cee676c59f3567e2fa73.png",
+    "static/media/background-image1.png": "/static/media/background-image1.e3d3a1c933fc56db0398.png",
+    "static/media/Clockend.png": "/static/media/Clockend.1ca5428f7c4167f8fb77.png",
+    "index.html": "/index.html",
+    "main.e17713ec.css.map": "/static/css/main.e17713ec.css.map",
+    "main.9f26d298.js.map": "/static/js/main.9f26d298.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e17713ec.css",
+    "static/js/main.9f26d298.js"
+  ]
+}
