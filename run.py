@@ -2,7 +2,8 @@ from flask import Flask, send_from_directory
 from flask_cors import CORS
 import os
 import atexit
-
+from dotenv import load_dotenv
+load_dotenv()
 from app.routes.routes import bp  
 from app.routes.crud_routes import crud_bp
 from app.routes.search_routes import search_bp
