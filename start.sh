@@ -10,4 +10,7 @@ cd ..
 pip install -r requirements.txt
 
 # Step 3: Start Flask backend
-gunicorn run:app --bind=0.0.0.0:$PORT
+exec gunicorn run:app \
+    --workers 1 \
+    --bind 0.0.0.0:$PORT \
+    --timeout 300
