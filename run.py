@@ -44,17 +44,15 @@ scheduler.start()
 atexit.register(lambda: scheduler.shutdown())
 
 # -------- Serve React Frontend --------
-@app.route("/")
-def serve_index():
-    return send_from_directory(app.static_folder, "index.html")
-
+@app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
-def serve_static_file(path):
+def serve(path):
     file_path = os.path.join(app.static_folder, path)
-    if os.path.exists(file_path):
+    if path != "" and os.path.exists(file_path):
         return send_from_directory(app.static_folder, path)
     else:
         return send_from_directory(app.static_folder, "index.html")
+
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
