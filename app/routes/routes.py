@@ -3,6 +3,9 @@ from ..db import get_connection
 
 bp = Blueprint('routes', __name__)
 
+@bp.route('/-')
+def home():
+    return "Backend is live "
 
 @bp.route('/medicines')
 def get_medicines():
