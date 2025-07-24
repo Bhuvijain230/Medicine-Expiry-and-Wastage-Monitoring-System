@@ -17,7 +17,7 @@ function Login() {
   const handleLogin = async (e) => {
   e.preventDefault();
   try {
-    const res = await axios.post( 'https://medicine-expiry-and-wastage-monitoring-a0uu.onrender.com/login'
+    const res = await axios.post( '/login'
 , {
       email,
       password
