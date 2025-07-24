@@ -95,7 +95,7 @@ const Donations = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post('/submit-donation', payload);
+      await axios.post('/submit-donation', payload);
       alert('Donation submitted successfully!');
       setDonor('');
       setContact('');
