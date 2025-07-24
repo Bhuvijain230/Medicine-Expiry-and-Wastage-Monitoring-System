@@ -4,8 +4,6 @@ import './Donations.css';
 
 const BASE_URL = 'https://medicine-expiry-and-wastage-monitoring-a0uu.onrender.com';
 
-
-
 const Donations = () => {
   const [city, setCity] = useState('');
   const [type, setType] = useState('hospitals');

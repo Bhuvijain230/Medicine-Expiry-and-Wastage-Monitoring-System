@@ -19,7 +19,10 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from app.scheduler_jobs import check_expiring_user_medicines
 
 # -------- Flask App Setup --------
-app = Flask(__name__, static_folder="frontend-folder/build", static_url_path="/")
+react_build_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "frontend-folder", "build")
+
+app = Flask(__name__, static_folder=react_build_path, static_url_path="/")
+
 CORS(app)
 init_mail(app)
 
