@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Inventory.css';
 import { useNavigate } from 'react-router-dom';
 
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'https://medicine-expiry-and-wastage-monitoring-a0uu.onrender.com';
 
 const Inventory = () => {
   const [userId, setUserId] = useState(null);

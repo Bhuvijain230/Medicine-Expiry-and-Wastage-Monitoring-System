@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Alerts.css';
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'https://medicine-expiry-and-wastage-monitoring-a0uu.onrender.com';
 
 const Alerts = () => {
   const [searchTerm, setSearchTerm] = useState('');

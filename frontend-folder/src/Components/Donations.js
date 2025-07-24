@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Donations.css';
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://medicine-expiry-and-wastage-monitoring-a0uu.onrender.com';
+
+
 
 const Donations = () => {
   const [city, setCity] = useState('');
