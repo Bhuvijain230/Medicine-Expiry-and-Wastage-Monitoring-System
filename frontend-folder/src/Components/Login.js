@@ -17,11 +17,14 @@ function Login() {
   const handleLogin = async (e) => {
   e.preventDefault();
   try {
-    const res = await axios.post( '/login'
-, {
-      email,
-      password
-    });
+    const res = await axios.post(
+  'https://medicine-expiry-and-wastage-monitoring-a0uu.onrender.com/login',
+  {
+    email,
+    password
+  }
+);
+
     alert('✅ ' + res.data.message);
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('user', JSON.stringify(res.data.user));
